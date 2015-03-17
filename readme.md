@@ -1,6 +1,6 @@
 # Google Cloud Datastore Sessions
 
-``cloud-datastore-session`` is a Express session storage backed by Google Cloud Datastore.
+``cloud-datastore-session`` is a Express session storage backed by [Google Cloud Datastore](https://cloud.google.com/datastore/docs).
 
 **Note:** Cloud Datastore is a persistent, distributed, transactional database. Often, it's more appropriate to choose a different storage solution for sessions such as Memcache or Redis as their designs offer much faster operation in this use case.
 
