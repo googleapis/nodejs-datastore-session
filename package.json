@@ -6,13 +6,13 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node"
   },
   "dependencies": {
     "gcloud": "^0.12.0"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node/issues"
   },
   "scripts": {
     "lint": "jshint index.js"
