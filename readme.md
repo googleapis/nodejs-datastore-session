@@ -23,7 +23,7 @@ var DatastoreStore = require('cloud-datastore-session')(session);
 
 app.use(session({
   store: new DatastoreStore({
-    dataset: gcloud.datastore.dataset({
+    dataset: gcloud.datastore({
         prefix: 'express-sessions',
         projectId: 'my-project-id',
         keyFilename: './key.json'
