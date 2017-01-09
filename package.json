@@ -1,21 +1,27 @@
 {
-  "name": "cloud-datastore-session",
+  "name": "@google-cloud/connect-datastore",
   "description": "Google Cloud Datastore session store for Express/Connect",
-  "version": "0.1.0",
-  "author": "Jon Wayne Parrott <jonwayne@google.com>",
-  "main": "./index.js",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">= 0.12.x"
+  },
+  "files": [
+    "AUTHORS",
+    "CONTRIBUTORS",
+    "src/"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node"
+    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node.git"
   },
   "peerDependencies": {
     "@google-cloud/datastore": "^0.6.0"
   },
   "bugs": {
     "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node/issues"
-  },
-  "scripts": {
-    "lint": "semistandard \"**/*.js\""
   },
   "semistandard": {
     "globals": [
@@ -32,11 +38,14 @@
       "doc"
     ]
   },
+  "scripts": {
+    "lint": "semistandard \"**/*.js\""
+  },
   "devDependencies": {
-    "@google-cloud/datastore": "^0.6.0",
+    "@google-cloud/datastore": "0.6.0",
     "express": "4.14.0",
     "express-session": "1.14.2",
     "mocha": "3.2.0",
-    "semistandard": "^9.2.1"
+    "semistandard": "9.2.1"
   }
 }
