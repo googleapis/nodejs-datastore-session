@@ -32,43 +32,43 @@ module.exports = function (session) {
 
   util.inherits(DatastoreStore, Store);
 
-  DatastoreStore.prototype.get = function (sid, fn) {
+  DatastoreStore.prototype.get = function (sid, callback) {
     this.ds.get(this.ds.key(['Session', sid]), function (err, entity) {
       if (err) {
-        return fn(err);
+        return callback(err);
       }
       if (!entity) {
-        return fn();
+        return callback();
       }
 
       var result;
       try {
-        result = JSON.parse(entity.data.data);
+        result = JSON.parse(entity.data);
       } catch (er) {
-        return fn(er);
+        return callback(er);
       }
-      return fn(null, result);
+      return callback(null, result);
     });
   };
 
-  DatastoreStore.prototype.set = function (sid, sess, fn) {
-    fn = fn || noop;
-    var jsonsess;
+  DatastoreStore.prototype.set = function (sid, sess, callback) {
+    callback = callback || noop;
+    var sessJson;
 
     try {
-      jsonsess = JSON.stringify(sess);
+      sessJson = JSON.stringify(sess);
     } catch (err) {
-      return fn(err);
+      return callback(err);
     }
 
     this.ds.save({
       key: this.ds.key(['Session', sid]),
       data: [{
         name: 'data',
-        value: jsonsess,
+        value: sessJson,
         excludeFromIndexes: true
       }]
-    }, fn);
+    }, callback);
   };
 
   DatastoreStore.prototype.destroy = function (sid, fn) {

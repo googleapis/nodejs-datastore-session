@@ -2,6 +2,17 @@
 
 # Google Cloud Datastore Sessions
 
+[![NPM][1]][2]
+[![Tests][3]][4]
+[![Coverage][5]][6]
+
+[1]: https://img.shields.io/npm/v/@google-cloud/connect-datastore.svg?style=flat
+[2]: https://www.npmjs.org/package/@google-cloud/connect-datastore
+[3]: https://img.shields.io/circleci/project/GoogleCloudPlatform/cloud-datastore-session-node/master.svg
+[4]: https://circleci.com/gh/GoogleCloudPlatform/cloud-datastore-session-node
+[5]: https://img.shields.io/codecov/c/github/GoogleCloudPlatform/cloud-datastore-session-node/master.svg
+[6]: https://codecov.io/github/GoogleCloudPlatform/cloud-datastore-session-node
+
 **@google-cloud/connect-datastore** is a [Google Cloud Datastore][datastore]
 session store backed by [@google-cloud/datastore][datastore_lib].
 
