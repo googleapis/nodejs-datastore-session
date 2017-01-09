@@ -15,12 +15,28 @@
     "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node/issues"
   },
   "scripts": {
-    "lint": "jshint index.js"
+    "lint": "semistandard \"**/*.js\""
+  },
+  "semistandard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "it"
+    ],
+    "ignore": [
+      "**/node_modules/**",
+      "coverage",
+      "doc"
+    ]
   },
   "devDependencies": {
     "@google-cloud/datastore": "^0.6.0",
     "express": "4.14.0",
     "express-session": "1.14.2",
-    "mocha": "3.2.0"
+    "mocha": "3.2.0",
+    "semistandard": "^9.2.1"
   }
 }
