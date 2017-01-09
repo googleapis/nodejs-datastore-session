@@ -27,7 +27,7 @@ module.exports = function(session) {
   function DatastoreStore(options) {
     options = options || {};
     Store.call(this, options);
-    this.ds = options.dataset;
+    this.ds = options.dataset || options.datastore;
     if (!this.ds) throw new Error("No dataset provided to Datastore Session.");
   }
 

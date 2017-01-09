@@ -8,8 +8,8 @@
     "type": "git",
     "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node"
   },
-  "dependencies": {
-    "gcloud": "^0.12.0"
+  "peerDependencies": {
+    "@google-cloud/datastore": "^0.6.0"
   },
   "bugs": {
     "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node/issues"
@@ -18,8 +18,9 @@
     "lint": "jshint index.js"
   },
   "devDependencies": {
-    "express": "^4.12.2",
-    "express-session": "^1.10.3",
-    "mocha": "^2.2.1"
+    "@google-cloud/datastore": "^0.6.0",
+    "express": "4.14.0",
+    "express-session": "1.14.2",
+    "mocha": "3.2.0"
   }
 }
