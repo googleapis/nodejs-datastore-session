@@ -11,7 +11,8 @@
   "files": [
     "AUTHORS",
     "CONTRIBUTORS",
-    "src/"
+    "src/",
+    "yarn.lock"
   ],
   "repository": {
     "type": "git",
