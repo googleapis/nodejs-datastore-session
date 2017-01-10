@@ -2,7 +2,7 @@
 
 ###### Breaking changes
 
-- Changed dependency on `gcloud` to ` peer dependency on `@google-cloud/datastore`
+- Changed dependency on `gcloud` to peer dependency on `@google-cloud/datastore`
 - Rename package to `@google-cloud/connect-datastore`
 
 ###### Other
