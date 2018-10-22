@@ -1,0 +1,19 @@
+{
+  "description": "Samples for the @google-cloud/connect-datastore npm module.",
+  "license": "Apache-2.0",
+  "author": "Google LLC",
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": "googleapis/nodejs-datastore-session",
+  "private": true,
+  "scripts": {
+    "test": "mocha system-test"
+  },
+  "dependencies": {
+    "@google-cloud/nodejs-datastore-session": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
