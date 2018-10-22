@@ -13,9 +13,4 @@
  * limitations under the License.
  */
 
-'use strict';
-
-it('should work', done => {
-  console.warn('no unit tests available 👻');
-  done();
-});
+console.warn(`no sample tests available 👻`);

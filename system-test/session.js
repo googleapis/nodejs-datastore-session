@@ -48,7 +48,7 @@ describe('Cloud Datastore Store', function() {
       assert.ifError(err);
       store.get('123', function(err, session) {
         assert.ifError(err);
-        assert.strictDeepEqual(session, {foo: 'bar'});
+        assert.deepStrictEqual(session, {foo: 'bar'});
         done();
       });
     });
@@ -57,7 +57,7 @@ describe('Cloud Datastore Store', function() {
   it('Should destroy a session', function(done) {
     store.destroy('123', function(err) {
       assert.ifError(err);
-      assert.strictEqual(err, undefined);
+      assert.strictEqual(err, null);
       store.get('123', function(err, session) {
         assert.ifError(err);
         assert.strictEqual(session, undefined);
