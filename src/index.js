@@ -16,12 +16,12 @@
 'use strict';
 
 var util = require('util');
-var noop = function () {};
+var noop = function() {};
 
-module.exports = function (session) {
+module.exports = function(session) {
   var Store = session.Store;
 
-  function DatastoreStore (options) {
+  function DatastoreStore(options) {
     options = options || {};
     Store.call(this, options);
     this.ds = options.dataset || options.datastore;
@@ -32,8 +32,8 @@ module.exports = function (session) {
 
   util.inherits(DatastoreStore, Store);
 
-  DatastoreStore.prototype.get = function (sid, callback) {
-    this.ds.get(this.ds.key(['Session', sid]), function (err, entity) {
+  DatastoreStore.prototype.get = function(sid, callback) {
+    this.ds.get(this.ds.key(['Session', sid]), function(err, entity) {
       if (err) {
         return callback(err);
       }
@@ -51,7 +51,7 @@ module.exports = function (session) {
     });
   };
 
-  DatastoreStore.prototype.set = function (sid, sess, callback) {
+  DatastoreStore.prototype.set = function(sid, sess, callback) {
     callback = callback || noop;
     var sessJson;
 
@@ -61,17 +61,22 @@ module.exports = function (session) {
       return callback(err);
     }
 
-    this.ds.save({
-      key: this.ds.key(['Session', sid]),
-      data: [{
-        name: 'data',
-        value: sessJson,
-        excludeFromIndexes: true
-      }]
-    }, callback);
+    this.ds.save(
+      {
+        key: this.ds.key(['Session', sid]),
+        data: [
+          {
+            name: 'data',
+            value: sessJson,
+            excludeFromIndexes: true,
+          },
+        ],
+      },
+      callback
+    );
   };
 
-  DatastoreStore.prototype.destroy = function (sid, fn) {
+  DatastoreStore.prototype.destroy = function(sid, fn) {
     this.ds.delete(this.ds.key(['Session', sid]), fn);
   };
 
