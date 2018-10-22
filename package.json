@@ -50,7 +50,7 @@
     "express": "4.14.0",
     "express-session": "1.14.2",
     "mocha": "3.2.0",
-    "nyc": "10.0.0",
+    "nyc": "10.3.2",
     "semistandard": "9.2.1"
   }
 }
