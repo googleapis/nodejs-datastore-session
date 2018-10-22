@@ -14,10 +14,7 @@
     "src/",
     "yarn.lock"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node.git"
-  },
+  "repository": "googleapis/nodejs-datastore-session",
   "peerDependencies": {
     "@google-cloud/datastore": "^0.6.0"
   },
