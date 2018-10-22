@@ -46,7 +46,7 @@
     "test": "npm run lint && npm run cover"
   },
   "devDependencies": {
-    "@google-cloud/datastore": "0^.6.0",
+    "@google-cloud/datastore": "^0.6.0",
     "express": "^4.16.4",
     "express-session": "^1.14.2",
     "mocha": "^3.2.0",
