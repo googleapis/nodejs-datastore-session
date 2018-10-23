@@ -18,7 +18,7 @@
     "@google-cloud/datastore": "^0.6.0"
   },
   "bugs": {
-    "url": "https://github.com/GoogleCloudPlatform/cloud-datastore-session-node/issues"
+    "url": "https://github.com/googleapis/nodejs-datastore-session/issues"
   },
   "scripts": {
     "lint": "eslint '**/*.js'",
