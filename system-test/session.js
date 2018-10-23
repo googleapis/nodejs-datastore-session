@@ -19,50 +19,48 @@ const assert = require('assert');
 const session = require('express-session');
 const DatastoreStore = require('../')(session);
 
-describe('Cloud Datastore Store', function() {
-  before(function() {
-    assert(
-      process.env.GCLOUD_PROJECT,
-      'GCLOUD_PROJECT env var required to run the tests.'
-    );
-    assert(
-      process.env.GOOGLE_APPLICATION_CREDENTIALS,
-      'GOOGLE_APPLICATION_CREDENTIALS env var required to run the tests.'
-    );
-  });
+before(() => {
+  assert(
+    process.env.GCLOUD_PROJECT,
+    'GCLOUD_PROJECT env var required to run the tests.'
+  );
+  assert(
+    process.env.GOOGLE_APPLICATION_CREDENTIALS,
+    'GOOGLE_APPLICATION_CREDENTIALS env var required to run the tests.'
+  );
+});
 
-  var store = new DatastoreStore({
-    dataset: require('@google-cloud/datastore')(),
-  });
+const store = new DatastoreStore({
+  dataset: require('@google-cloud/datastore')(),
+});
 
-  it('Should return an empty session', function(done) {
+it('Should return an empty session', function(done) {
+  store.get('123', function(err, session) {
+    assert.ifError(err);
+    assert.strictEqual(session, undefined);
+    done();
+  });
+});
+
+it('Should create and retrieve a session', function(done) {
+  store.set('123', {foo: 'bar'}, function(err) {
+    assert.ifError(err);
+    store.get('123', function(err, session) {
+      assert.ifError(err);
+      assert.deepStrictEqual(session, {foo: 'bar'});
+      done();
+    });
+  });
+});
+
+it('Should destroy a session', function(done) {
+  store.destroy('123', function(err) {
+    assert.ifError(err);
+    assert.strictEqual(err, null);
     store.get('123', function(err, session) {
       assert.ifError(err);
       assert.strictEqual(session, undefined);
       done();
-    });
-  });
-
-  it('Should create and retrieve a session', function(done) {
-    store.set('123', {foo: 'bar'}, function(err) {
-      assert.ifError(err);
-      store.get('123', function(err, session) {
-        assert.ifError(err);
-        assert.deepStrictEqual(session, {foo: 'bar'});
-        done();
-      });
-    });
-  });
-
-  it('Should destroy a session', function(done) {
-    store.destroy('123', function(err) {
-      assert.ifError(err);
-      assert.strictEqual(err, null);
-      store.get('123', function(err, session) {
-        assert.ifError(err);
-        assert.strictEqual(session, undefined);
-        done();
-      });
     });
   });
 });

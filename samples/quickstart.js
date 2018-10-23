@@ -13,4 +13,31 @@
  * limitations under the License.
  */
 
-console.warn(`no samples available 👻`);
+const Datastore = require('@google-cloud/datastore');
+const express = require('express');
+const session = require('express-session');
+const app = express();
+
+const DatastoreStore = require('@google-cloud/connect-datastore')(session);
+
+app.use(
+  session({
+    store: new DatastoreStore({
+      dataset: Datastore({
+        prefix: 'express-sessions',
+
+        // For convenience, @google-cloud/datastore automatically looks for the
+        // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
+        // project ID here:
+        projectId: 'YOUR_PROJECT_ID' || process.env.GCLOUD_PROJECT,
+
+        // For convenience, @google-cloud/datastore automatically looks for the
+        // GOOGLE_APPLICATION_CREDENTIALS environment variable. Or you can
+        // explicitly pass in that path to your key file here:
+        keyFilename:
+          '/path/to/keyfile.json' || process.env.GOOGLE_APPLICATION_CREDENTIALS,
+      }),
+    }),
+    secret: 'my-secret',
+  })
+);
