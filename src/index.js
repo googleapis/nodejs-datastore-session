@@ -45,10 +45,10 @@ module.exports = function(session) {
         }
         return callback(null, result);
       });
-    };
+    }
 
     set(sid, sess, callback) {
-      callback = callback || noop;
+      callback = callback || (() => {});
       let sessJson;
 
       try {
@@ -70,11 +70,11 @@ module.exports = function(session) {
         },
         callback
       );
-    };
+    }
 
     destroy(sid, fn) {
       this.ds.delete(this.ds.key(['Session', sid]), fn);
-    };
+    }
   }
   return DatastoreStore;
-}
+};
