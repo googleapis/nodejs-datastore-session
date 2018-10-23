@@ -3,15 +3,9 @@
 # Google Cloud Datastore Sessions
 
 [![NPM][1]][2]
-[![Tests][3]][4]
-[![Coverage][5]][6]
 
 [1]: https://img.shields.io/npm/v/@google-cloud/connect-datastore.svg?style=flat
 [2]: https://www.npmjs.org/package/@google-cloud/connect-datastore
-[3]: https://img.shields.io/circleci/project/GoogleCloudPlatform/cloud-datastore-session-node/master.svg
-[4]: https://circleci.com/gh/GoogleCloudPlatform/cloud-datastore-session-node
-[5]: https://img.shields.io/codecov/c/github/GoogleCloudPlatform/cloud-datastore-session-node/master.svg
-[6]: https://codecov.io/github/GoogleCloudPlatform/cloud-datastore-session-node
 
 **@google-cloud/connect-datastore** is a [Google Cloud Datastore][datastore]
 session store backed by [@google-cloud/datastore][datastore_lib].
@@ -23,11 +17,7 @@ use case.
 
 ## Installation
 
-    npm install --save @google-cloud/connect-datastore
-
-or
-
-    yarn add @google-cloud/connect-datastore
+    npm install @google-cloud/connect-datastore
 
 ## Configuration
 
@@ -38,13 +28,12 @@ See [gcloud node's documentation][auth] on setting up authentication.
 ## Usage Example
 
 ```javascript
-var Datastore = require('@google-cloud/datastore');
+const Datastore = require('@google-cloud/datastore');
+const express = require('express');
+const session = require('express-session');
+const app = express();
 
-var express = require('express');
-var session = require('express-session');
-var app = express();
-
-var DatastoreStore = require('@google-cloud/connect-datastore')(session);
+const DatastoreStore = require('@google-cloud/connect-datastore')(session);
 
 app.use(session({
   store: new DatastoreStore({
@@ -77,4 +66,4 @@ app.use(session({
 [express]: http://expressjs.com/
 [datastore]: https://cloud.google.com/datastore/docs
 [datastore_lib]: https://www.npmjs.com/package/@google-cloud/datastore
-[auth]: https://googlecloudplatform.github.io/google-cloud-node/#/docs/google-cloud/latest/guides/authentication
+[auth]: https://cloud.google.com/docs/authentication/getting-started
