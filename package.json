@@ -15,7 +15,7 @@
   ],
   "repository": "googleapis/nodejs-datastore-session",
   "peerDependencies": {
-    "@google-cloud/datastore": "^0.6.0"
+    "@google-cloud/datastore": "^0.8.0"
   },
   "bugs": {
     "url": "https://github.com/googleapis/nodejs-datastore-session/issues"
