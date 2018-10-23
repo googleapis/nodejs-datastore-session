@@ -19,9 +19,9 @@ const assert = require('assert');
 const session = require('express-session');
 const DatastoreStore = require('../')(session);
 
-describe('Cloud Datastore Store', function() {
-  before(function() {
-    assert(
+
+before(() => {
+  assert(
       process.env.GCLOUD_PROJECT,
       'GCLOUD_PROJECT env var required to run the tests.'
     );
@@ -31,7 +31,7 @@ describe('Cloud Datastore Store', function() {
     );
   });
 
-  var store = new DatastoreStore({
+  const store = new DatastoreStore({
     dataset: require('@google-cloud/datastore')(),
   });
 
@@ -65,4 +65,3 @@ describe('Cloud Datastore Store', function() {
       });
     });
   });
-});

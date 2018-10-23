@@ -15,70 +15,66 @@
 
 'use strict';
 
-var util = require('util');
-var noop = function() {};
-
 module.exports = function(session) {
-  var Store = session.Store;
+  const Store = session.Store;
 
-  function DatastoreStore(options) {
-    options = options || {};
-    Store.call(this, options);
-    this.ds = options.dataset || options.datastore;
-    if (!this.ds) {
-      throw new Error('No dataset provided to Datastore Session.');
+  class DatastoreStore extends Store {
+    constructor(options) {
+      options = options || {};
+      super(options);
+      this.ds = options.dataset || options.datastore;
+      if (!this.ds) {
+        throw new Error('No dataset provided to Datastore Session.');
+      }
     }
-  }
 
-  util.inherits(DatastoreStore, Store);
+    get(sid, callback) {
+      this.ds.get(this.ds.key(['Session', sid]), (err, entity) => {
+        if (err) {
+          return callback(err);
+        }
+        if (!entity) {
+          return callback();
+        }
 
-  DatastoreStore.prototype.get = function(sid, callback) {
-    this.ds.get(this.ds.key(['Session', sid]), function(err, entity) {
-      if (err) {
+        let result;
+        try {
+          result = JSON.parse(entity.data);
+        } catch (er) {
+          return callback(er);
+        }
+        return callback(null, result);
+      });
+    };
+
+    set(sid, sess, callback) {
+      callback = callback || noop;
+      let sessJson;
+
+      try {
+        sessJson = JSON.stringify(sess);
+      } catch (err) {
         return callback(err);
       }
-      if (!entity) {
-        return callback();
-      }
 
-      var result;
-      try {
-        result = JSON.parse(entity.data);
-      } catch (er) {
-        return callback(er);
-      }
-      return callback(null, result);
-    });
-  };
+      this.ds.save(
+        {
+          key: this.ds.key(['Session', sid]),
+          data: [
+            {
+              name: 'data',
+              value: sessJson,
+              excludeFromIndexes: true,
+            },
+          ],
+        },
+        callback
+      );
+    };
 
-  DatastoreStore.prototype.set = function(sid, sess, callback) {
-    callback = callback || noop;
-    var sessJson;
-
-    try {
-      sessJson = JSON.stringify(sess);
-    } catch (err) {
-      return callback(err);
-    }
-
-    this.ds.save(
-      {
-        key: this.ds.key(['Session', sid]),
-        data: [
-          {
-            name: 'data',
-            value: sessJson,
-            excludeFromIndexes: true,
-          },
-        ],
-      },
-      callback
-    );
-  };
-
-  DatastoreStore.prototype.destroy = function(sid, fn) {
-    this.ds.delete(this.ds.key(['Session', sid]), fn);
-  };
-
+    destroy(sid, fn) {
+      this.ds.delete(this.ds.key(['Session', sid]), fn);
+    };
+  }
   return DatastoreStore;
-};
+}
