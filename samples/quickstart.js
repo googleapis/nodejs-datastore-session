@@ -24,7 +24,7 @@ app.use(
   session({
     store: new DatastoreStore({
       dataset: Datastore({
-        prefix: 'express-sessions',
+        kind: 'express-sessions',
 
         // For convenience, @google-cloud/datastore automatically looks for the
         // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a

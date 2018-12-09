@@ -26,10 +26,11 @@ module.exports = function(session) {
       if (!this.ds) {
         throw new Error('No dataset provided to Datastore Session.');
       }
+      this.kind = options.kind || 'Session';
     }
 
     get(sid, callback) {
-      this.ds.get(this.ds.key(['Session', sid]), (err, entity) => {
+      this.ds.get(this.ds.key([this.kind, sid]), (err, entity) => {
         if (err) {
           return callback(err);
         }
@@ -59,7 +60,7 @@ module.exports = function(session) {
 
       this.ds.save(
         {
-          key: this.ds.key(['Session', sid]),
+          key: this.ds.key([this.kind, sid]),
           data: [
             {
               name: 'data',
@@ -73,7 +74,7 @@ module.exports = function(session) {
     }
 
     destroy(sid, fn) {
-      this.ds.delete(this.ds.key(['Session', sid]), fn);
+      this.ds.delete(this.ds.key([this.kind, sid]), fn);
     }
   }
   return DatastoreStore;
