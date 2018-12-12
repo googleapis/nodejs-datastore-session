@@ -10,6 +10,15 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## v2.0.1
+
+12-11-2018 21:18 PST
+
+### Internal / Testing Changes
+- chore(build): inject yoshi automation key ([#66](https://github.com/googleapis/nodejs-datastore-session/pull/66))
+- chore: update nyc and eslint configs ([#65](https://github.com/googleapis/nodejs-datastore-session/pull/65))
+- chore: fix publish.sh permission +x ([#62](https://github.com/googleapis/nodejs-datastore-session/pull/62))
+
 ## v2.0.0
 
 12-10-2018 15:18 PST
