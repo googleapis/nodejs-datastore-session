@@ -57,11 +57,11 @@ app.use(session({
 
 ## Contributing
 
-* See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+* See [CONTRIBUTING.md](https://github.com/googleapis/nodejs-datastore-session/blob/master/.github/CONTRIBUTING.md)
 
 ## License
 
-* Apache 2.0 - See [LICENSE](LICENSE)
+* Apache 2.0 - See [LICENSE](https://github.com/googleapis/nodejs-datastore-session/blob/master/LICENSE)
 
 [express]: http://expressjs.com/
 [datastore]: https://cloud.google.com/datastore/docs
