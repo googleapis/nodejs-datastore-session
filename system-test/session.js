@@ -18,6 +18,7 @@
 const assert = require('assert');
 const session = require('express-session');
 const DatastoreStore = require('../')(session);
+const {Datastore} = require('@google-cloud/datastore');
 
 before(() => {
   assert(
@@ -31,7 +32,7 @@ before(() => {
 });
 
 const store = new DatastoreStore({
-  dataset: require('@google-cloud/datastore')(),
+  dataset: new Datastore(),
 });
 
 it('Should return an empty session', function(done) {

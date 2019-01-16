@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-const Datastore = require('@google-cloud/datastore');
+const {Datastore} = require('@google-cloud/datastore');
 const express = require('express');
 const session = require('express-session');
 const app = express();

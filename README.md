@@ -28,7 +28,7 @@ See [gcloud node's documentation][auth] on setting up authentication.
 ## Usage Example
 
 ```javascript
-const Datastore = require('@google-cloud/datastore');
+const {Datastore} = require('@google-cloud/datastore');
 const express = require('express');
 const session = require('express-session');
 const app = express();
