@@ -57,7 +57,7 @@ app.use(session({
 
 ## Contributing
 
-* See [CONTRIBUTING.md](https://github.com/googleapis/nodejs-datastore-session/blob/master/.github/CONTRIBUTING.md)
+* See [CONTRIBUTING.md](https://github.com/googleapis/nodejs-datastore-session/blob/master/CONTRIBUTING.md)
 
 ## License
 
