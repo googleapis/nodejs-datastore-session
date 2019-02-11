@@ -26,7 +26,9 @@
     "system-test": "mocha system-test/ -t 10000",
     "docs": "jsdoc -c .jsdoc.js",
     "test": "nyc mocha",
-    "fix": "eslint --fix '**/*.js'"
+    "fix": "eslint --fix '**/*.js'",
+    "docs-test": "blcl docs -r --exclude www.googleapis.com",
+    "predocs-test": "npm run docs"
   },
   "devDependencies": {
     "@google-cloud/datastore": "^3.0.0",
@@ -40,6 +42,7 @@
     "jsdoc": "^3.5.5",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "broken-link-checker-local": "^0.2.0"
   }
 }
