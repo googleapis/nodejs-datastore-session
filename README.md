@@ -37,7 +37,7 @@ const DatastoreStore = require('@google-cloud/connect-datastore')(session);
 
 app.use(session({
   store: new DatastoreStore({
-    dataset: Datastore({
+    dataset: new Datastore({
       kind: 'express-sessions',
 
       // For convenience, @google-cloud/datastore automatically looks for the
