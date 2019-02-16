@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=8"
   },
+  "files": [
+    "*.js"
+  ],
   "repository": "googleapis/nodejs-datastore-session",
   "private": true,
   "scripts": {
@@ -17,6 +20,9 @@
     "express-session": "^1.15.6"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "execa": "^1.0.0",
+    "gaxios": "^1.7.0",
     "mocha": "^5.2.0"
   }
 }
