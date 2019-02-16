@@ -10,6 +10,27 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## v2.0.2
+
+02-15-2019 23:34 PST
+
+### Dependencies
+- fix(deps): update dependency @google-cloud/datastore to v3 ([#70](https://github.com/googleapis/nodejs-datastore-session/pull/70))
+
+### Documentation
+- docs: fix quickstart code for 3.0 ([#83](https://github.com/googleapis/nodejs-datastore-session/pull/83))
+- docs: update links in contrib guide ([#80](https://github.com/googleapis/nodejs-datastore-session/pull/80))
+- docs: update contributing path in README ([#76](https://github.com/googleapis/nodejs-datastore-session/pull/76))
+- docs: move CONTRIBUTING.md to root ([#75](https://github.com/googleapis/nodejs-datastore-session/pull/75))
+- docs: add lint/fix example to contributing guide ([#73](https://github.com/googleapis/nodejs-datastore-session/pull/73))
+
+### Internal / Testing Changes
+- build: use linkinator for docs test ([#79](https://github.com/googleapis/nodejs-datastore-session/pull/79))
+- build: create docs test npm scripts ([#78](https://github.com/googleapis/nodejs-datastore-session/pull/78))
+- build: test using @grpc/grpc-js in CI ([#77](https://github.com/googleapis/nodejs-datastore-session/pull/77))
+- chore(deps): update dependency eslint-config-prettier to v4 ([#72](https://github.com/googleapis/nodejs-datastore-session/pull/72))
+- build: ignore googleapis.com in doc link check ([#71](https://github.com/googleapis/nodejs-datastore-session/pull/71))
+
 ## v2.0.1
 
 12-11-2018 21:18 PST
