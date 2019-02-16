@@ -23,21 +23,24 @@ const DatastoreStore = require('@google-cloud/connect-datastore')(session);
 app.use(
   session({
     store: new DatastoreStore({
-      dataset: Datastore({
+      dataset: new Datastore({
         kind: 'express-sessions',
-
-        // For convenience, @google-cloud/datastore automatically looks for the
-        // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
-        // project ID here:
-        projectId: 'YOUR_PROJECT_ID' || process.env.GCLOUD_PROJECT,
-
-        // For convenience, @google-cloud/datastore automatically looks for the
-        // GOOGLE_APPLICATION_CREDENTIALS environment variable. Or you can
-        // explicitly pass in that path to your key file here:
-        keyFilename:
-          '/path/to/keyfile.json' || process.env.GOOGLE_APPLICATION_CREDENTIALS,
       }),
     }),
     secret: 'my-secret',
+    resave: false,
+    saveUninitialized: true,
   })
 );
+
+app.get('/', (req, res) => {
+  if (!req.session.views) {
+    req.session.views = 0;
+  }
+  const views = req.session.views++;
+  res.send(`Views ${views}`);
+});
+
+app.listen(4830, () => {
+  console.log(`Example app listening on port 4830!`);
+});

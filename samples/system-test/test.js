@@ -13,4 +13,22 @@
  * limitations under the License.
  */
 
-console.warn(`no sample tests available 👻`);
+const execa = require('execa');
+const {assert} = require('chai');
+const {request} = require('gaxios');
+
+describe('sample tests', () => {
+  const url = 'http://localhost:4830';
+  let proc;
+  before(() => {
+    proc = execa('node', ['quickstart'], {stdio: 'inherit'});
+  });
+  after(() => {
+    proc.kill();
+  });
+  it('should run the quickstart', async () => {
+    await new Promise(r => setTimeout(r, 1000));
+    const res = await request({url});
+    assert.match(res.data, /Views 0/);
+  });
+});
