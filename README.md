@@ -1,69 +1,78 @@
-<img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Inc. logo" title="Google" align="right" height="96" width="96"/>
+[//]: # "This README.md file is auto-generated, all changes to this file will be lost."
+[//]: # "To regenerate it, use `python -m synthtool`."
+<img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
 
-# Google Cloud Datastore Sessions
+# [:  Client](https://github.com/)
 
-[![NPM][1]][2]
+None
+[![npm version](https://img.shields.io/npm/v/@google-cloud/connect-datastore.svg)](https://www.npmjs.org/package/@google-cloud/connect-datastore)
+[![codecov](https://img.shields.io/codecov/c/github//master.svg?style=flat)](https://codecov.io/gh/)
 
-[1]: https://img.shields.io/npm/v/@google-cloud/connect-datastore.svg?style=flat
-[2]: https://www.npmjs.org/package/@google-cloud/connect-datastore
 
-**@google-cloud/connect-datastore** is a [Google Cloud Datastore][datastore]
-session store backed by [@google-cloud/datastore][datastore_lib].
+Google Cloud Datastore session store for Express/Connect
 
-**Note:** Cloud Datastore is a persistent, distributed, transactional database.
-Often, it's more appropriate to choose a different storage solution for sessions
-such as Memcache or Redis as their designs offer much faster operation in this
-use case.
 
-## Installation
+* [Using the client library](#using-the-client-library)
+* [Versioning](#versioning)
+* [Contributing](#contributing)
+* [License](#license)
 
-    npm install @google-cloud/connect-datastore
+## Using the client library
 
-## Configuration
+1.  [Select or create a Cloud Platform project][projects].
+1.  [Enable the  API][enable_api].
+1.  [Set up authentication with a service account][auth] so you can access the
+    API from your local workstation.
 
-You must have a Google Cloud project and credentials.
+1. Install the client library:
 
-See [gcloud node's documentation][auth] on setting up authentication.
+        npm install @google-cloud/connect-datastore
 
-## Usage Example
 
-```javascript
-const {Datastore} = require('@google-cloud/datastore');
-const express = require('express');
-const session = require('express-session');
-const app = express();
 
-const DatastoreStore = require('@google-cloud/connect-datastore')(session);
 
-app.use(session({
-  store: new DatastoreStore({
-    dataset: new Datastore({
-      kind: 'express-sessions',
 
-      // For convenience, @google-cloud/datastore automatically looks for the
-      // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
-      // project ID here:
-      projectId: 'YOUR_PROJECT_ID' || process.env.GCLOUD_PROJECT,
+The [  Client API Reference][client-docs] documentation
+also contains samples.
 
-      // For convenience, @google-cloud/datastore automatically looks for the
-      // GOOGLE_APPLICATION_CREDENTIALS environment variable. Or you can
-      // explicitly pass in that path to your key file here:
-      keyFilename: '/path/to/keyfile.json' || process.env.GOOGLE_APPLICATION_CREDENTIALS
-    })
-  }),
-  secret: 'my-secret'
-}));
-```
+## Versioning
+
+This library follows [Semantic Versioning](http://semver.org/).
+
+
+
+
+
+
+More Information: [Google Cloud Platform Launch Stages][launch_stages]
+
+[launch_stages]: https://cloud.google.com/terms/launch-stages
 
 ## Contributing
 
-* See [CONTRIBUTING.md](https://github.com/googleapis/nodejs-datastore-session/blob/master/CONTRIBUTING.md)
+Contributions welcome! See the [Contributing Guide](https://github.com//blob/master/CONTRIBUTING.md).
 
 ## License
 
-* Apache 2.0 - See [LICENSE](https://github.com/googleapis/nodejs-datastore-session/blob/master/LICENSE)
+Apache Version 2.0
 
-[express]: http://expressjs.com/
-[datastore]: https://cloud.google.com/datastore/docs
-[datastore_lib]: https://www.npmjs.com/package/@google-cloud/datastore
+See [LICENSE](https://github.com//blob/master/LICENSE)
+
+## What's Next
+
+* [ Documentation][product-docs]
+* [  Client API Reference][client-docs]
+* [github.com/](https://github.com/)
+
+Read more about the client libraries for Cloud APIs, including the older
+Google APIs Client Libraries, in [Client Libraries Explained][explained].
+
+[explained]: https://cloud.google.com/apis/docs/client-libraries-explained
+
+[client-docs]: 
+[product-docs]: 
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
+[projects]: https://console.cloud.google.com/project
+[billing]: https://support.google.com/cloud/answer/6293499#enable-billing
+[enable_api]: https://console.cloud.google.com/flows/enableapi?apiid=
 [auth]: https://cloud.google.com/docs/authentication/getting-started
