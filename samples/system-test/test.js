@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-const execa = require('execa');
+const {execSync} = require('child_process');
 const {assert} = require('chai');
 const {request} = require('gaxios');
 
