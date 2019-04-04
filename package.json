@@ -9,8 +9,6 @@
     "node": ">=6"
   },
   "files": [
-    "AUTHORS",
-    "CONTRIBUTORS",
     "src/"
   ],
   "repository": "googleapis/nodejs-datastore-session",
@@ -22,7 +20,7 @@
   },
   "scripts": {
     "lint": "eslint '**/*.js'",
-    "samples-test": "echo no samples 👻",
+    "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "system-test": "mocha system-test/ -t 10000",
     "docs": "jsdoc -c .jsdoc.js",
     "test": "nyc mocha",

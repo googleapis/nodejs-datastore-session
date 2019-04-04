@@ -27,7 +27,7 @@ describe('sample tests', () => {
     proc.kill();
   });
   it('should run the quickstart', async () => {
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 2000));
     const res = await request({url});
     assert.match(res.data, /Views 0/);
   });
