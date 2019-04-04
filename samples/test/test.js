@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-const {execSync} = require('child_process');
+const {spawn} = require('child_process');
 const {assert} = require('chai');
 const {request} = require('gaxios');
 
@@ -21,7 +21,7 @@ describe('sample tests', () => {
   const url = 'http://localhost:4830';
   let proc;
   before(() => {
-    proc = execa('node', ['quickstart'], {stdio: 'inherit'});
+    proc = spawn('node', ['quickstart'], {stdio: 'inherit'});
   });
   after(() => {
     proc.kill();

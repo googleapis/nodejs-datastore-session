@@ -11,7 +11,7 @@
   "repository": "googleapis/nodejs-datastore-session",
   "private": true,
   "scripts": {
-    "test": "mocha system-test"
+    "test": "mocha"
   },
   "dependencies": {
     "@google-cloud/connect-datastore": "^2.0.2",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-        "gaxios": "^1.7.0",
+    "gaxios": "^1.7.0",
     "mocha": "^6.0.0"
   }
 }
