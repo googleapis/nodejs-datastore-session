@@ -6,7 +6,7 @@
   "author": "Google Inc.",
   "main": "./src/index.js",
   "engines": {
-    "node": ">=6"
+    "node": ">=8.10.0"
   },
   "files": [
     "src/"
