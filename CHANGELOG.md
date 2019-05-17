@@ -10,6 +10,23 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [3.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v2.0.2...v3.0.0) (2019-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @google-cloud/datastore to v4 ([#114](https://www.github.com/googleapis/nodejs-datastore-session/issues/114)) ([d99e32e](https://www.github.com/googleapis/nodejs-datastore-session/commit/d99e32e))
+
+
+### Build System
+
+* upgrade engines field to >=8.10.0 ([#107](https://www.github.com/googleapis/nodejs-datastore-session/issues/107)) ([a6b861f](https://www.github.com/googleapis/nodejs-datastore-session/commit/a6b861f))
+
+
+### BREAKING CHANGES
+
+* upgrade engines field to >=8.10.0 (#107)
+
 ## v2.0.2
 
 02-15-2019 23:34 PST
@@ -76,4 +93,3 @@
 - chore(build): update to a modern configuration ([#22](https://github.com/googleapis/nodejs-datastore-session/pull/22))
 - chore(build): add synth file and generate ([#21](https://github.com/googleapis/nodejs-datastore-session/pull/21))
 - Add renovate.json ([#13](https://github.com/googleapis/nodejs-datastore-session/pull/13))
-
