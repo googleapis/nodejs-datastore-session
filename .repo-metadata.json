@@ -1,0 +1,11 @@
+{
+  "name": "connect-datastore",
+  "name_pretty": "Google Cloud Datastore Session",
+  "product_documentation": "https://cloud.google.com/datastore",
+  "client_documentation": "https://github.com/googleapis/nodejs-datastore-session/blob/master/README.md",
+  "release_level": "GA",
+  "language": "nodejs",
+  "repo": "googleapis/nodejs-datastore-session",
+  "distribution_name": "@google-cloud/connect-datastore",
+  "api_id": "datastore.googleapis.com"
+}
