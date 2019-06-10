@@ -3,3 +3,4 @@ package-lock.json
 .nyc_output
 coverage
 docs/
+__pycache__
