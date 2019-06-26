@@ -10,6 +10,13 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+### [3.0.1](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.0.0...v3.0.1) (2019-06-26)
+
+
+### Bug Fixes
+
+* **docs:** make anchors work in jsdoc ([#128](https://www.github.com/googleapis/nodejs-datastore-session/issues/128)) ([da7e815](https://www.github.com/googleapis/nodejs-datastore-session/commit/da7e815))
+
 ## [3.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v2.0.2...v3.0.0) (2019-05-20)
 
 
