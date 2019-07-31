@@ -37,7 +37,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "jsdoc": "^3.5.5",
-    "jsdoc-baseline": "^0.1.0",
+    "jsdoc-fresh": "^1.0.1",
     "linkinator": "^1.5.0",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
