@@ -28,6 +28,20 @@ module.exports = function(session) {
         throw new Error('No dataset provided to Datastore Session.');
       }
       this.kind = options.kind || 'Session';
+
+      if (options.expirationMs) {
+        if (
+          typeof options.expirationMs !== typeof 0 ||
+          options.expirationMs < 0
+        ) {
+          throw new Error(
+            'invalid value for option expirationMs: must be an integer greater than 0'
+          );
+        }
+        this.expirationMs = parseInt(options.expirationMs, 10);
+      } else {
+        this.expirationMs = 0;
+      }
     }
 
     get(sid, callback) {
@@ -45,6 +59,25 @@ module.exports = function(session) {
         } catch (er) {
           return callback(er);
         }
+
+        if (!entity.createdAt || !this.expirationMs) {
+          return callback(null, result);
+        }
+
+        const createdAtMs = entity.createdAt.valueOf();
+        const expiresAtMs = createdAtMs + this.expirationMs;
+        const nowMs = new Date().valueOf();
+
+        if (expiresAtMs <= nowMs) {
+          this.destroy(sid, err => {
+            if (err) {
+              return callback(err);
+            }
+            return callback();
+          });
+          return;
+        }
+
         return callback(null, result);
       });
     }
@@ -59,16 +92,23 @@ module.exports = function(session) {
         return callback(err);
       }
 
+      const createdAt = new Date();
+      const data = [
+        {
+          name: 'data',
+          value: sessJson,
+          excludeFromIndexes: true,
+        },
+        {
+          name: 'createdAt',
+          value: createdAt,
+        },
+      ];
+
       this.ds.save(
         {
           key: this.ds.key([this.kind, sid]),
-          data: [
-            {
-              name: 'data',
-              value: sessJson,
-              excludeFromIndexes: true,
-            },
-          ],
+          data,
         },
         callback
       );

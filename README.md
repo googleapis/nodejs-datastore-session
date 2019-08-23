@@ -40,6 +40,12 @@ app.use(session({
     dataset: new Datastore({
       kind: 'express-sessions',
 
+      // Optional: expire the session after this many milliseconds.
+      // note: datastore does not automatically delete all expired sessions
+      // you may want to run separate cleanup requests to remove expired sessions
+      // 0 means do not expire
+      expirationMs: 0,
+
       // For convenience, @google-cloud/datastore automatically looks for the
       // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
       // project ID here:
@@ -54,6 +60,15 @@ app.use(session({
   secret: 'my-secret'
 }));
 ```
+
+## Expiration
+If a session is fetched with the delta between the createdAt time and current
+time greater than expirationMs, the session will not be returned and will
+instead be destroyed.
+
+Datastore does not support a `ttl`, and tokens are only deleted if a session
+is fetched. You will likely want to implement logic to occasionally delete
+expired sessions.
 
 ## Contributing
 

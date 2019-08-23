@@ -32,37 +32,87 @@ before(() => {
   );
 });
 
-const store = new DatastoreStore({
-  dataset: new Datastore(),
-});
-
-it('Should return an empty session', function(done) {
-  store.get('123', function(err, session) {
-    assert.ifError(err);
-    assert.strictEqual(session, undefined);
-    done();
+describe('works with no expiration', () => {
+  const store = new DatastoreStore({
+    dataset: new Datastore(),
   });
-});
 
-it('Should create and retrieve a session', function(done) {
-  store.set('123', {foo: 'bar'}, function(err) {
-    assert.ifError(err);
-    store.get('123', function(err, session) {
+  it('Should return an empty session', function(done) {
+    store.get('id1', function(err, session) {
       assert.ifError(err);
-      assert.deepStrictEqual(session, {foo: 'bar'});
+      assert.strictEqual(session, undefined);
       done();
+    });
+  });
+
+  it('Should create and retrieve a session', function(done) {
+    store.set('id1', {foo: 'bar'}, function(err) {
+      assert.ifError(err);
+      store.get('id1', function(err, session) {
+        assert.ifError(err);
+        assert.deepStrictEqual(session, {foo: 'bar'});
+        done();
+      });
+    });
+  });
+
+  it('Should destroy a session', function(done) {
+    store.destroy('id1', function(err) {
+      assert.ifError(err);
+      assert.strictEqual(err, null);
+      store.get('id1', function(err, session) {
+        assert.ifError(err);
+        assert.strictEqual(session, undefined);
+        done();
+      });
     });
   });
 });
 
-it('Should destroy a session', function(done) {
-  store.destroy('123', function(err) {
-    assert.ifError(err);
-    assert.strictEqual(err, null);
-    store.get('123', function(err, session) {
+describe('expired session is not returned', () => {
+  const store = new DatastoreStore({
+    dataset: new Datastore(),
+    expirationMs: 1,
+  });
+
+  it('Should create but not retrieve an expired session', function(done) {
+    store.set('id2', {foo: 'bar'}, function(err) {
       assert.ifError(err);
-      assert.strictEqual(session, undefined);
-      done();
+      store.get('id2', function(err, session) {
+        assert.ifError(err);
+        assert.deepStrictEqual(session, undefined);
+        done();
+      });
+    });
+  });
+});
+
+describe('unexpired session is returned', () => {
+  const store = new DatastoreStore({
+    dataset: new Datastore(),
+    expirationMs: 10000,
+  });
+
+  it('Should create and retrieve a session', function(done) {
+    store.set('id3', {foo: 'bar'}, function(err) {
+      assert.ifError(err);
+      store.get('id3', function(err, session) {
+        assert.ifError(err);
+        assert.deepStrictEqual(session, {foo: 'bar'});
+        done();
+      });
+    });
+  });
+
+  it('Should destroy a session', function(done) {
+    store.destroy('id3', function(err) {
+      assert.ifError(err);
+      assert.strictEqual(err, null);
+      store.get('id3', function(err, session) {
+        assert.ifError(err);
+        assert.strictEqual(session, undefined);
+        done();
+      });
     });
   });
 });
