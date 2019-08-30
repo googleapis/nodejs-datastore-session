@@ -37,14 +37,15 @@ const DatastoreStore = require('@google-cloud/connect-datastore')(session);
 
 app.use(session({
   store: new DatastoreStore({
-    dataset: new Datastore({
-      kind: 'express-sessions',
+    kind: 'express-sessions',
 
-      // Optional: expire the session after this many milliseconds.
-      // note: datastore does not automatically delete all expired sessions
-      // you may want to run separate cleanup requests to remove expired sessions
-      // 0 means do not expire
-      expirationMs: 0,
+    // Optional: expire the session after this many milliseconds.
+    // note: datastore does not automatically delete all expired sessions
+    // you may want to run separate cleanup requests to remove expired sessions
+    // 0 means do not expire
+    expirationMs: 0,
+
+    dataset: new Datastore({
 
       // For convenience, @google-cloud/datastore automatically looks for the
       // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
