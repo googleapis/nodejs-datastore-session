@@ -10,6 +10,13 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [3.1.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.0.1...v3.1.0) (2019-10-03)
+
+
+### Features
+
+* add option expirationMs ([#134](https://www.github.com/googleapis/nodejs-datastore-session/issues/134)) ([13d6e2c](https://www.github.com/googleapis/nodejs-datastore-session/commit/13d6e2c))
+
 ### [3.0.1](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.0.0...v3.0.1) (2019-06-26)
 
 
