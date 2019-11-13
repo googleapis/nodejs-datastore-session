@@ -10,6 +10,13 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+### [3.1.1](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.1.0...v3.1.1) (2019-11-13)
+
+
+### Bug Fixes
+
+* **docs:** snippets are now replaced in jsdoc comments ([#152](https://www.github.com/googleapis/nodejs-datastore-session/issues/152)) ([5c0dbc7](https://www.github.com/googleapis/nodejs-datastore-session/commit/5c0dbc7e64ad6b289a694201b639287a7b32d1bd))
+
 ## [3.1.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.0.1...v3.1.0) (2019-10-03)
 
 
