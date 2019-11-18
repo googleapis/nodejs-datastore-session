@@ -1,7 +1,7 @@
 {
   "name": "@google-cloud/connect-datastore",
   "description": "Google Cloud Datastore session store for Express/Connect",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "Apache-2.0",
   "author": "Google Inc.",
   "main": "./src/index.js",
@@ -38,9 +38,11 @@
     "express-session": "^1.15.6",
     "jsdoc": "^3.5.5",
     "jsdoc-fresh": "^1.0.1",
+    "jsdoc-region-tag": "^1.0.2",
     "linkinator": "^1.5.0",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
     "prettier": "^1.14.3"
-  }
+  },
+  "dependencies": {}
 }
