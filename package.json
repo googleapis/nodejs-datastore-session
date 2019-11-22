@@ -13,7 +13,7 @@
   ],
   "repository": "googleapis/nodejs-datastore-session",
   "peerDependencies": {
-    "@google-cloud/datastore": "^4.0.0"
+    "@google-cloud/datastore": "^5.0.0"
   },
   "bugs": {
     "url": "https://github.com/googleapis/nodejs-datastore-session/issues"
@@ -29,7 +29,7 @@
     "predocs-test": "npm run docs"
   },
   "devDependencies": {
-    "@google-cloud/datastore": "^4.0.0",
+    "@google-cloud/datastore": "^5.0.0",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-node": "^10.0.0",
