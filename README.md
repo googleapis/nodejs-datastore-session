@@ -50,12 +50,12 @@ app.use(session({
       // For convenience, @google-cloud/datastore automatically looks for the
       // GCLOUD_PROJECT environment variable. Or you can explicitly pass in a
       // project ID here:
-      projectId: 'YOUR_PROJECT_ID' || process.env.GCLOUD_PROJECT,
+      projectId: process.env.GCLOUD_PROJECT,
 
       // For convenience, @google-cloud/datastore automatically looks for the
       // GOOGLE_APPLICATION_CREDENTIALS environment variable. Or you can
       // explicitly pass in that path to your key file here:
-      keyFilename: '/path/to/keyfile.json' || process.env.GOOGLE_APPLICATION_CREDENTIALS
+      keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
     })
   }),
   secret: 'my-secret'
