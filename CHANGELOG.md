@@ -10,6 +10,19 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [4.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.1.1...v4.0.0) (2019-12-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** @google-cloud/datastore@^5.0.0 is now required.
+
+### Bug Fixes
+
+* **deps:** TypeScript 3.7.0 causes breaking change in typings ([#160](https://www.github.com/googleapis/nodejs-datastore-session/issues/160)) ([0434c88](https://www.github.com/googleapis/nodejs-datastore-session/commit/0434c88c35076d84a2638a0d4fa55a24fe560a49))
+* **deps:** update dependency @google-cloud/datastore to v5 ([#155](https://www.github.com/googleapis/nodejs-datastore-session/issues/155)) ([6b0b4f1](https://www.github.com/googleapis/nodejs-datastore-session/commit/6b0b4f10769973c37494f7a80d4a84d73cc8f33f))
+* **docs:** reference environment variables in README ([#159](https://www.github.com/googleapis/nodejs-datastore-session/issues/159)) ([d5c9577](https://www.github.com/googleapis/nodejs-datastore-session/commit/d5c9577e524446a7a5c22dc5bca84b81d6a77eba))
+
 ### [3.1.1](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.1.0...v3.1.1) (2019-11-13)
 
 
