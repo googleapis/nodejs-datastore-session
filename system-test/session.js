@@ -20,17 +20,6 @@ const session = require('express-session');
 const DatastoreStore = require('../')(session);
 const {Datastore} = require('@google-cloud/datastore');
 
-before(() => {
-  assert(
-    process.env.GCLOUD_PROJECT,
-    'GCLOUD_PROJECT env var required to run the tests.'
-  );
-  assert(
-    process.env.GOOGLE_APPLICATION_CREDENTIALS,
-    'GOOGLE_APPLICATION_CREDENTIALS env var required to run the tests.'
-  );
-});
-
 describe('works with no expiration', () => {
   const store = new DatastoreStore({
     dataset: new Datastore(),

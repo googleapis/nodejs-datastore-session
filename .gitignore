@@ -1,6 +1,5 @@
 node_modules
 package-lock.json
-.nyc_output
-coverage
+.coverage
 docs/
 __pycache__
