@@ -14,7 +14,11 @@
 
 'use strict';
 
-it('should work', done => {
-  console.warn('no unit tests available 👻');
-  done();
+const {describe, it} = require('mocha');
+
+describe('datastore session', () => {
+  it('should work', done => {
+    console.warn('no unit tests available 👻');
+    done();
+  });
 });
