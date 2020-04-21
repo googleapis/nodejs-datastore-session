@@ -10,6 +10,18 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [4.1.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v4.0.0...v4.1.0) (2020-04-21)
+
+
+### Features
+
+* drop Node 8 from engines field ([#198](https://www.github.com/googleapis/nodejs-datastore-session/issues/198)) ([b01e4e8](https://www.github.com/googleapis/nodejs-datastore-session/commit/b01e4e8b8ce39f281cd76070a57ff37bc48e5e30))
+
+
+### Bug Fixes
+
+* apache license URL ([#468](https://www.github.com/googleapis/nodejs-datastore-session/issues/468)) ([#192](https://www.github.com/googleapis/nodejs-datastore-session/issues/192)) ([d2e90bf](https://www.github.com/googleapis/nodejs-datastore-session/commit/d2e90bfe5584433e03e8de3a4587420bb7691a85))
+
 ## [4.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.1.1...v4.0.0) (2019-12-05)
 
 
