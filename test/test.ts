@@ -12,13 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-'use strict';
-
-const {describe, it} = require('mocha');
+import {describe, it} from 'mocha';
+import * as assert from 'assert';
 
 describe('datastore session', () => {
-  it('should work', done => {
-    console.warn('no unit tests available 👻');
-    done();
+  it('should work', async () => {
+    assert.ok('no unit tests available 👻');
   });
 });

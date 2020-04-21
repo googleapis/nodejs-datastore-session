@@ -15,9 +15,9 @@
 const {Datastore} = require('@google-cloud/datastore');
 const express = require('express');
 const session = require('express-session');
-const app = express();
+const {DatastoreStore} = require('@google-cloud/connect-datastore');
 
-const DatastoreStore = require('@google-cloud/connect-datastore')(session);
+const app = express();
 
 app.use(
   session({
@@ -41,5 +41,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(4830, () => {
-  console.log(`Example app listening on port 4830!`);
+  console.log('Example app listening on port 4830!');
 });
