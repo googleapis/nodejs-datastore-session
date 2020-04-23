@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//      http://www.apache.org/licenses/LICENSE-2.0
+//      https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,31 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-'use strict';
-
-const assert = require('assert');
-const {describe, it} = require('mocha');
-const session = require('express-session');
-const DatastoreStore = require('../')(session);
-const {Datastore} = require('@google-cloud/datastore');
+import * as assert from 'assert';
+import {describe, it} from 'mocha';
+import {DatastoreStore} from '../src';
+import {Datastore} from '@google-cloud/datastore';
 
 describe('works with no expiration', () => {
   const store = new DatastoreStore({
     dataset: new Datastore(),
   });
 
-  it('Should return an empty session', function(done) {
-    store.get('id1', function(err, session) {
+  it('Should return an empty session', done => {
+    store.get('id1', (err, session) => {
       assert.ifError(err);
       assert.strictEqual(session, undefined);
       done();
     });
   });
 
-  it('Should create and retrieve a session', function(done) {
-    store.set('id1', {foo: 'bar'}, function(err) {
+  it('Should create and retrieve a session', done => {
+    store.set('id1', ({foo: 'bar'} as {}) as Express.SessionData, err => {
       assert.ifError(err);
-      store.get('id1', function(err, session) {
+      store.get('id1', (err, session) => {
         assert.ifError(err);
         assert.deepStrictEqual(session, {foo: 'bar'});
         done();
@@ -44,11 +41,11 @@ describe('works with no expiration', () => {
     });
   });
 
-  it('Should destroy a session', function(done) {
-    store.destroy('id1', function(err) {
+  it('Should destroy a session', done => {
+    store.destroy('id1', err => {
       assert.ifError(err);
       assert.strictEqual(err, null);
-      store.get('id1', function(err, session) {
+      store.get('id1', (err, session) => {
         assert.ifError(err);
         assert.strictEqual(session, undefined);
         done();
@@ -63,10 +60,10 @@ describe('expired session is not returned', () => {
     expirationMs: 1,
   });
 
-  it('Should create but not retrieve an expired session', function(done) {
-    store.set('id2', {foo: 'bar'}, function(err) {
+  it('Should create but not retrieve an expired session', done => {
+    store.set('id2', ({foo: 'bar'} as {}) as Express.SessionData, err => {
       assert.ifError(err);
-      store.get('id2', function(err, session) {
+      store.get('id2', (err, session) => {
         assert.ifError(err);
         assert.deepStrictEqual(session, undefined);
         done();
@@ -81,10 +78,10 @@ describe('unexpired session is returned', () => {
     expirationMs: 10000,
   });
 
-  it('Should create and retrieve a session', function(done) {
-    store.set('id3', {foo: 'bar'}, function(err) {
+  it('Should create and retrieve a session', done => {
+    store.set('id3', ({foo: 'bar'} as {}) as Express.SessionData, err => {
       assert.ifError(err);
-      store.get('id3', function(err, session) {
+      store.get('id3', (err, session) => {
         assert.ifError(err);
         assert.deepStrictEqual(session, {foo: 'bar'});
         done();
@@ -92,11 +89,11 @@ describe('unexpired session is returned', () => {
     });
   });
 
-  it('Should destroy a session', function(done) {
-    store.destroy('id3', function(err) {
+  it('Should destroy a session', done => {
+    store.destroy('id3', err => {
       assert.ifError(err);
       assert.strictEqual(err, null);
-      store.get('id3', function(err, session) {
+      store.get('id3', (err, session) => {
         assert.ifError(err);
         assert.strictEqual(session, undefined);
         done();

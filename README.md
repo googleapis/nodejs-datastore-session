@@ -29,11 +29,11 @@ See [gcloud node's documentation][auth] on setting up authentication.
 
 ```javascript
 const {Datastore} = require('@google-cloud/datastore');
+const {DatastoreStore} = require('@google-cloud/connect-datastore');
 const express = require('express');
 const session = require('express-session');
-const app = express();
 
-const DatastoreStore = require('@google-cloud/connect-datastore')(session);
+const app = express();
 
 app.use(session({
   store: new DatastoreStore({
