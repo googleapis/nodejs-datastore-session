@@ -25,12 +25,13 @@
     "fix": "gts fix",
     "docs-test": "linkinator docs",
     "predocs-test": "npm run docs",
-    "prelint": "cd samples; npm link ../; npm i",
+    "prelint": "cd samples; npm link ../; npm install",
     "lint": "gts check",
     "clean": "gts clean",
     "compile": "tsc -p .",
     "prepare": "npm run compile",
-    "pretest": "npm run compile"
+    "pretest": "npm run compile",
+    "precompile": "gts clean"
   },
   "dependencies": {},
   "peerDependencies": {
