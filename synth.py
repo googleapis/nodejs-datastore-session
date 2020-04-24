@@ -1,5 +1,6 @@
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.node as node
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -10,3 +11,5 @@ templates = common_templates.node_library(
   source_location='build/src'
 )
 s.copy(templates, excludes=["README.md"])
+node.install()
+node.fix()
