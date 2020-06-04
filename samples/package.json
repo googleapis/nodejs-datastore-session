@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@google-cloud/connect-datastore": "^4.0.0",
-    "@google-cloud/datastore": "^5.0.0",
+    "@google-cloud/datastore": "^6.0.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6"
   },
