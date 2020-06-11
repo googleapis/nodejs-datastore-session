@@ -10,6 +10,24 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [5.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v4.0.0...v5.0.0) (2020-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* The import style of this library has changed.  In previous versions, the default export was a function which accepted a session parameter.  The import style is now es module compliant:
+
+### Features
+
+* convert to TypeScript ([#200](https://www.github.com/googleapis/nodejs-datastore-session/issues/200)) ([02d6483](https://www.github.com/googleapis/nodejs-datastore-session/commit/02d6483e5bf1ed7c1397458c2d1c6a7e33aa7b26))
+* drop Node 8 from engines field ([#198](https://www.github.com/googleapis/nodejs-datastore-session/issues/198)) ([b01e4e8](https://www.github.com/googleapis/nodejs-datastore-session/commit/b01e4e8b8ce39f281cd76070a57ff37bc48e5e30))
+
+
+### Bug Fixes
+
+* apache license URL ([#468](https://www.github.com/googleapis/nodejs-datastore-session/issues/468)) ([#192](https://www.github.com/googleapis/nodejs-datastore-session/issues/192)) ([d2e90bf](https://www.github.com/googleapis/nodejs-datastore-session/commit/d2e90bfe5584433e03e8de3a4587420bb7691a85))
+* **deps:** update dependency @google-cloud/datastore to v6 ([#205](https://www.github.com/googleapis/nodejs-datastore-session/issues/205)) ([877df23](https://www.github.com/googleapis/nodejs-datastore-session/commit/877df23f70496b3d52bcb90bc8e4a5959a9ce67e))
+
 ## [4.0.0](https://www.github.com/googleapis/nodejs-datastore-session/compare/v3.1.1...v4.0.0) (2019-12-05)
 
 
