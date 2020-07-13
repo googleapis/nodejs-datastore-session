@@ -41,7 +41,7 @@
   "devDependencies": {
     "@google-cloud/datastore": "^6.0.0",
     "@types/express-session": "^1.17.0",
-    "@types/mocha": "^7.0.2",
+    "@types/mocha": "^8.0.0",
     "@types/node": "^10.0.3",
     "c8": "^7.0.0",
     "express": "^4.17.1",
