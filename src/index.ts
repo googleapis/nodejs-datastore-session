@@ -31,7 +31,7 @@ export class DatastoreStore extends expressSession.Store {
   kind: string;
   expirationMs: number;
   constructor(options: DataStoreOptions = {}) {
-    super(options);
+    super();
     this.ds = (options.dataset || options.datastore)!;
     if (!this.ds) {
       throw new Error('No dataset provided to Datastore Session.');
@@ -55,7 +55,10 @@ export class DatastoreStore extends expressSession.Store {
 
   get = (
     sid: string,
-    callback: (err: Error | null, session?: Express.SessionData | null) => void
+    callback: (
+      err: Error | null,
+      session?: expressSession.SessionData | null
+    ) => void
   ) => {
     this.ds.get(this.ds.key([this.kind, sid]), (err, entity) => {
       if (err) {
@@ -96,7 +99,7 @@ export class DatastoreStore extends expressSession.Store {
 
   set = (
     sid: string,
-    sess: Express.SessionData,
+    sess: expressSession.SessionData,
     callback?: (err: Error | null) => void
   ) => {
     callback = callback || (() => {});
