@@ -16,6 +16,7 @@ import * as assert from 'assert';
 import {describe, it} from 'mocha';
 import {DatastoreStore} from '../src';
 import {Datastore} from '@google-cloud/datastore';
+import {SessionData} from 'express-session';
 
 describe('works with no expiration', () => {
   const store = new DatastoreStore({
@@ -31,7 +32,7 @@ describe('works with no expiration', () => {
   });
 
   it('Should create and retrieve a session', done => {
-    store.set('id1', ({foo: 'bar'} as {}) as Express.SessionData, err => {
+    store.set('id1', ({foo: 'bar'} as {}) as SessionData, err => {
       assert.ifError(err);
       store.get('id1', (err, session) => {
         assert.ifError(err);
@@ -61,7 +62,7 @@ describe('expired session is not returned', () => {
   });
 
   it('Should create but not retrieve an expired session', done => {
-    store.set('id2', ({foo: 'bar'} as {}) as Express.SessionData, err => {
+    store.set('id2', ({foo: 'bar'} as {}) as SessionData, err => {
       assert.ifError(err);
       store.get('id2', (err, session) => {
         assert.ifError(err);
@@ -79,7 +80,7 @@ describe('unexpired session is returned', () => {
   });
 
   it('Should create and retrieve a session', done => {
-    store.set('id3', ({foo: 'bar'} as {}) as Express.SessionData, err => {
+    store.set('id3', ({foo: 'bar'} as {}) as SessionData, err => {
       assert.ifError(err);
       store.get('id3', (err, session) => {
         assert.ifError(err);
