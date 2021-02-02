@@ -7,5 +7,6 @@
   "language": "nodejs",
   "repo": "googleapis/nodejs-datastore-session",
   "distribution_name": "@google-cloud/connect-datastore",
-  "api_id": "datastore.googleapis.com"
+  "api_id": "datastore.googleapis.com",
+  "codeowner_team": "@googleapis/firestore-dpe"
 }
