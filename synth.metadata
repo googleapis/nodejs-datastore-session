@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-datastore-session.git",
-        "sha": "48e4ea0db07fef418dc058c4e2ff4ca8f4c57392"
+        "sha": "ae6f35242d6a7a7a6d12be52c1a2ab48eef54e83"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "57c23fa5705499a4181095ced81f0ee0933b64f6"
+        "sha": "318e351e26ba65b2b3cfa3f61b3b64e3540c3525"
       }
     }
   ]
