@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-datastore-session.git",
-        "sha": "42446f4b0f9def6e9d9f025e3e089553e4f37353"
+        "sha": "7cb5cdb66b833d145e3ed1f823d7166102d5eb53"
       }
     },
     {
