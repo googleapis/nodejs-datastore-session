@@ -72,7 +72,7 @@ export class DatastoreStore extends expressSession.Store {
       try {
         result = JSON.parse(entity.data);
       } catch (er) {
-        return callback(er);
+        return callback(er as Error);
       }
 
       if (!entity.createdAt || !this.expirationMs) {
@@ -108,7 +108,7 @@ export class DatastoreStore extends expressSession.Store {
     try {
       sessJson = JSON.stringify(sess);
     } catch (err) {
-      return callback(err);
+      return callback(err as Error);
     }
 
     const createdAt = new Date();
