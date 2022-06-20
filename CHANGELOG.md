@@ -10,6 +10,22 @@
 - Update code style and switch to using Semistandard for linting
 - Added `yarn.lock` file
 - Updated licensing, authors, contributors, readme
+## [6.0.0](https://github.com/googleapis/nodejs-datastore-session/compare/v5.0.3...v6.0.0) (2022-06-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* update library to use Node 12 (#307)
+
+### Bug Fixes
+
+* **deps:** update dependency @google-cloud/datastore to v7 ([#312](https://github.com/googleapis/nodejs-datastore-session/issues/312)) ([52f67db](https://github.com/googleapis/nodejs-datastore-session/commit/52f67db9355d454ba04e18c849a8bdf08cdea462))
+
+
+### Build System
+
+* update library to use Node 12 ([#307](https://github.com/googleapis/nodejs-datastore-session/issues/307)) ([d10a3af](https://github.com/googleapis/nodejs-datastore-session/commit/d10a3af46e355723a8c45a8e632fd373a108dc0e))
+
 ### [5.0.3](https://www.github.com/googleapis/nodejs-datastore-session/compare/v5.0.2...v5.0.3) (2021-08-25)
 
 
