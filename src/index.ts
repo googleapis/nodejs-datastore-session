@@ -112,6 +112,7 @@ export class DatastoreStore extends expressSession.Store {
     }
 
     const createdAt = new Date();
+    const expiresAt = sess.expirationMs > 0 ? new Date(createdAt.valueOf() + sess.expirationMs) : '' ;
     const data = [
       {
         name: 'data',
@@ -121,6 +122,10 @@ export class DatastoreStore extends expressSession.Store {
       {
         name: 'createdAt',
         value: createdAt,
+      },
+      {
+        name: 'expiresAt',
+        value: expiresAt,
       },
     ];
 
