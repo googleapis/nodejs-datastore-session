@@ -112,7 +112,7 @@ export class DatastoreStore extends expressSession.Store {
     }
 
     const createdAt = new Date();
-    const expiresAt = sess.expirationMs > 0 ? new Date(createdAt.valueOf() + sess.expirationMs) : '' ;
+    const expiresAt = this.expirationMs > 0 ? new Date(createdAt.valueOf() + this.expirationMs) : '' ;
     const data = [
       {
         name: 'data',
