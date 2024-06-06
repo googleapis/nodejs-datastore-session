@@ -1,0 +1,6 @@
+introduction: |-
+    **_THIS REPOSITORY AND PACKAGE WILL BE DEPRECATED IN JULY 2024_**
+    
+    @google-cloud/connect-datastore is a Google Cloud Datastore session store backed by @google-cloud/datastore.
+
+    Note: Cloud Datastore is a persistent, distributed, transactional database. Often, it's more appropriate to choose a different storage solution for sessions such as Memcache or Redis as their designs offer much faster operation in this use case.
