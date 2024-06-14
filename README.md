@@ -1,5 +1,7 @@
 <img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Inc. logo" title="Google" align="right" height="96" width="96"/>
 
+**_THIS REPOSITORY AND PACKAGE WILL BE DEPRECATED IN JULY 2024_**
+    
 # Google Cloud Datastore Sessions
 
 [![NPM][1]][2]
